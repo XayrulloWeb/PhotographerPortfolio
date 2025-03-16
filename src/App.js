@@ -16,7 +16,7 @@ function App() {
         x: -20,
         duration: 1,
         opacity: 0,
-        stagger: 0.1,
+        stagger: 0.4,
       });
     }
 
