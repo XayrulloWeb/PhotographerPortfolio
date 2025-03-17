@@ -9,6 +9,7 @@ import img4 from "./assets/Images/photo4.jpeg";
 function App() {
   const textRef = useRef(null);
   const bottomTextRef = useRef(null);
+  const imagesRef = useRef(null);
 
   useEffect(() => {
     if (textRef.current) {
@@ -27,7 +28,27 @@ function App() {
         duration: 1.5,
       });
     }
+
+    if (imagesRef.current) {
+      const images = imagesRef.current.querySelectorAll(".img_group img");
+
+      gsap.from(images, {
+        opacity: 0,
+        x: 1100,
+        duration: 1,
+        stagger: 0.14,
+      });
+
+      gsap.to(images, {
+        opacity: 1,
+        x: 0, // Теперь картинки приходят в центр (0, а не снова 1100)
+        duration: 1,
+        stagger: 0.14,
+        rotate: 15, // Добавляем поворот
+      }, "-=0.8"); // Анимация начинается немного раньше
+    }
   }, []);
+
 
   return (
     <div className="App">
