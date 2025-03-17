@@ -33,7 +33,7 @@ function App() {
       const images = imagesRef.current.querySelectorAll(".img_group img");
 
       gsap.from(images, {
-        opacity: 0,
+        opacity: 1,
         x: 1100,
         duration: 1,
         stagger: 0.14,
