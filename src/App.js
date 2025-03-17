@@ -44,7 +44,7 @@ function App() {
             x: 1100, // Вместо margin
             duration: 1,
             margin: '0 -140px 0',
-            stagger: 0.1, // Уменьшаем шаг
+            stagger: 0.14, // Уменьшаем шаг
             rotate: 15,
             opacity: 1,
           }, "-=0.5");
