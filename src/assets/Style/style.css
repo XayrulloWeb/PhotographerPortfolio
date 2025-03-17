@@ -130,3 +130,6 @@ h1 .photographer:hover:before {
     font-weight: 400;
     text-transform: uppercase;
 }
+.img_group img{
+    width: 400px;
+}

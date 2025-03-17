@@ -74,7 +74,7 @@ function App() {
           </h1>
         </div>
         
-        <div className="img_group">
+        <div className="img_group" ref={imagesRef}>
           <div className="img_group_inner">
             <img src={img1} alt="photo" />
             <img src={img2} alt="photo" />
