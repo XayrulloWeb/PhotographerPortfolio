@@ -12,8 +12,10 @@ function App() {
   const imagesRef = useRef(null);
 
   useEffect(() => {
+    const tl = gsap.timeline();
+
     if (textRef.current) {
-      gsap.from(textRef.current.querySelectorAll("span"), {
+      tl.from(textRef.current.querySelectorAll("span"), {
         x: -20,
         duration: 1,
         opacity: 0,
@@ -22,7 +24,7 @@ function App() {
     }
 
     if (bottomTextRef.current) {
-      gsap.from(bottomTextRef.current, {
+      tl.from(bottomTextRef.current, {
         opacity: 0,
         y: 20,
         duration: 1.5,
@@ -32,22 +34,21 @@ function App() {
     if (imagesRef.current) {
       const images = imagesRef.current.querySelectorAll(".img_group img");
 
-      gsap.from(images, {
-        opacity: 1,
+      tl.from(images, {
+        opacity: 0,
         x: 1100,
         duration: 1,
         stagger: 0.14,
-      });
-
-      gsap.to(images, {
+      }).to(images, {
         opacity: 1,
-        x: 0, // Теперь картинки приходят в центр (0, а не снова 1100)
+        x: 0,
         duration: 1,
         stagger: 0.14,
-        rotate: 15, // Добавляем поворот
-      }, "-=0.8"); // Анимация начинается немного раньше
+        rotate: 15,
+      }, "-=0.5"); // Стартует чуть раньше, чтобы не было паузы
     }
   }, []);
+
 
 
   return (
