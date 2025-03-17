@@ -10,6 +10,9 @@ function App() {
   const textRef = useRef(null);
   const bottomTextRef = useRef(null);
   const imagesRef = useRef(null);
+  const spanRef = useRef(null);
+  const logoRef = useRef(null);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -28,6 +31,29 @@ function App() {
         opacity: 0,
         y: 20,
         duration: 1.5,
+      });
+    }
+    if (spanRef.current) {
+      tl.from(spanRef.current.querySelectorAll(".bottom_text h5 span"), {
+        x: -20,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.7,
+      });
+    }
+    if (logoRef.current) {
+      tl.from(logoRef.current.querySelectorAll("header .logo"), {
+        y: -20,
+        duration: 1,
+        opacity: 0,
+      });
+    }
+    if (navRef.current) {
+      tl.from(navRef.current.querySelectorAll("header nav ul li"), {
+        y: -20,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.07,
       });
     }
 
