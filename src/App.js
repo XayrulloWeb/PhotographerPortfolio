@@ -36,18 +36,19 @@ function App() {
 
       tl.from(images, {
         opacity: 0,
-        x: 1100,
+        x: 1100, // Используем меньшее значение
         duration: 1,
         stagger: 0.14,
-      }).to(images, {
-        x: 1100, // Теперь элементы двигаются обратно в начальное положение
-        duration: 1,
-        stagger: 0.14,
-        rotate: 15,
-        margin:'0 140px 0',
-        opacity: 1,
+      })
+          .to(images, {
+            x: 1100, // Вместо margin
+            duration: 1,
+            margin: '0 -140px 0',
+            stagger: 0.1, // Уменьшаем шаг
+            rotate: 15,
+            opacity: 1,
+          }, "-=0.5");
 
-      }, "-=0.5");
     }
   }, []);
 
