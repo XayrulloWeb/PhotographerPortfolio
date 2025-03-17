@@ -40,13 +40,14 @@ function App() {
         duration: 1,
         stagger: 0.14,
       }).to(images, {
-        opacity: 1,
         x: 1100, // Теперь элементы двигаются обратно в начальное положение
         duration: 1,
         stagger: 0.14,
         rotate: 15,
-        margin:'0 140px 0'
-      }, "-=0.4");
+        margin:'0 140px 0',
+        opacity: 1,
+
+      }, "-=0.5");
     }
   }, []);
 
