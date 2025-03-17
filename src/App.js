@@ -83,11 +83,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="logo" useRef={logoRef}>
+        <div className="logo" ref={logoRef}>
           <a href="#">LOGO</a>
         </div>
         <nav>
-          <ul useRef={navRef}>
+          <ul ref={navRef}>
             <li><a href="#">Photos</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact US</a></li>
